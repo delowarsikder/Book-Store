@@ -1,0 +1,15 @@
+<h1>Products List</h1>
+
+<div id="products">
+  <%= render 'homes/table_header'%>
+  <% @products.each do |product| %>
+    <%= render product %>
+  <% end %>
+
+  </table> 
+  
+  <%= link_to "Add New product", new_product_path, class:"btn btn-primary" %>
+  <br>
+  <br>
+
+</div>
