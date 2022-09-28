@@ -1,6 +1,3 @@
- <% unless cart.line_items.empty? %>
-
-
 <div id="<%= dom_id cart %>">
   <h2 class="font-bold text-lg mb-3">Your Cart</h2>
 
@@ -29,11 +26,4 @@
 
   </table>
 
-
-  <div class="d-flex justify-content">
-      <%= button_to "Empty cart", @cart, method: :delete ,form: { data: { turbo_confirm: 'Are you sure?' } },class:"btn btn-danger"%> | 
-      <%= button_to "Checkout", '/', class:"btn btn-success"%> 
-  </div>
-
 </div>
-<%end%>

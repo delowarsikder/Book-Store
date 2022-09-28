@@ -19,7 +19,7 @@ Product.create!(title: 'Docker for Rails Developers',
     as Docker transforms the massive leap of deploying your app in the cloud 
     into a baby step.},
   image_url: 'ridocker.jpg',
-  price: 38.00)
+  price: 30.00)
 # . . .
 Product.create!(title: 'Build Chatbot Interactions',
   description:
@@ -56,7 +56,7 @@ Product.create!(title: 'Programming Crystal',
 
 
 
-Product.create!(title: 'Programming Crystal',
+Product.create!(title: 'Rails',
   description:
     %{Create High-Performance, Safe, Concurrent Apps.
       Crystal is for Ruby programmers who want more performance or for 
@@ -68,7 +68,7 @@ Product.create!(title: 'Programming Crystal',
       tooling. Now you can write beautiful code that runs faster, scales better, 
       and is a breeze to deploy.
       },
-  image_url: '',
-  price: 40.00)
+  image_url: 'rails.png',
+  price: 50.00)
 
   # image_url: 'waterfall.jpg',
