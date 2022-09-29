@@ -1,8 +1,14 @@
-<h3>Please Enter Your Details</h3>
-
-<%= render "form", order: @order %>
 <br>
-
+<div class="card">
+  <div class="card-header">
+    <h2>Please Enter Your Details</h3>
+  </div>
+  <div class="card-body">
+ <%= render "form", order: @order %>
+<br>  
 <div>
-  <%= link_to "Back to orders", orders_path %>
+  <%= link_to "Add More", store_index_url,class:'btn btn-primary' %>
+</div>
+
+  </div>
 </div>

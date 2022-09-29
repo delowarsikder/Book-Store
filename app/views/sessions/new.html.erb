@@ -1,0 +1,40 @@
+<section class="depot_form">
+
+  <% if flash[:alert] %>
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+      <aside>
+        <%= flash[:alert] %>
+      </aside>
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+    <% end %>
+
+      <br>
+      <div class="card">
+
+        <%= form_tag do %>
+          <div class="card-header">
+            <h2>Please Log In</h2>
+          </div>
+          <div class="card-body">
+
+            <div class="field form-group">
+              <%= label_tag :name, 'Name:' ,class:'form-label' %>
+                <%= text_field_tag :name, params[:name] ,class:'form-control'%>
+            </div>
+
+            <div class="field form-group">
+              <%= label_tag :password, 'Password:' ,class:'form-label' %>
+                <%= password_field_tag :password, params[:password] ,class:'form-control'%>
+            </div>
+            <br>
+            <div class="actions">
+              <%= submit_tag "Login" %>
+            </div>
+
+          </div>
+      </div>
+
+      <% end %>
+
+</section>

@@ -18,15 +18,15 @@
     <div class="position-relative d-flex flex-column min-vh-100">
 
       <%=render 'home/header' %>
-      
+
       <div class="d-flex flex-row">
 
       <div class="p-2">
-        <%if @cart%>
-          <%=render @cart%>
-        <%end%>
-      </div>
         
+          <%if @cart%>
+            <%=render @cart%>
+          <%end%>
+      </div>
       <div class="container">
         <%if notice%>
           <%=render 'layouts/alert' %>

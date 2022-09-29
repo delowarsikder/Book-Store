@@ -1,5 +1,6 @@
 class OrdersController < ApplicationController
   include CurrentCart
+  skip_before_action :authorize
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :set_cart , only: %i[new create]
   before_action :ensure_cart_isnot_empty, only: %i[new]

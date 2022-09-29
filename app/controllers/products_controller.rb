@@ -1,6 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
+  after_action :product_list ,only: %i[update]
+
   # GET /products or /products.json
   def index
     @products = Product.all.order(:title)
@@ -40,9 +42,9 @@ class ProductsController < ApplicationController
       if @product.update(product_params)
         format.html { redirect_to product_url(@product), notice: "Product was successfully updated." }
         format.json { render :show, status: :ok, location: @product }
-        @product=Product.all.order(:title)
-        ActionCable.server.broadcast 'products',html: render_to_string('store/index',layout:false)
 
+        # @product=Product.all.order(:title)
+        # ActionCable.server.broadcast 'products',html: redirect_to_string('store/index',layout:false)
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @product.errors, status: :unprocessable_entity }
@@ -80,4 +82,9 @@ class ProductsController < ApplicationController
     def product_params
       params.require(:product).permit(:title, :description, :image_url, :price)
     end
+
+    def product_list
+
+    end
+
 end
