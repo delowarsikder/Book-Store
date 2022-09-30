@@ -1,6 +1,6 @@
 class Order < ApplicationRecord
   #add validation email
-  validates:email, format:{with:/([a-zA-Z]+[0-9]*(\@)(gmail)(\.)(com|org))\b/, message: "please enter valid email" }
+  validates:email, format:{with:/([a-zA-Z]+[0-9]*(\@)(gmail)(\.)(com|org|[a-z]*))\b/, message: "please enter valid email" }
   
   enum pay_type: {
     "Check"          => 0, 
