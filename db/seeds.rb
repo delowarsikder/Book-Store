@@ -19,12 +19,12 @@ Product.create!(title: 'Docker for Rails Developers',
     as Docker transforms the massive leap of deploying your app in the cloud 
     into a baby step.},
   image_url: 'ridocker.jpg',
-  price: 38.00)
+  price: 30.00)
 # . . .
 Product.create!(title: 'Build Chatbot Interactions',
   description:
-    %{
-      Responsive, Intuitive Interfaces with Ruby
+    %{<p>
+     <em> Responsive, Intuitive Interfaces with Ruby</em> <br>
       The next step in the evolution of user interfaces is here. 
       Chatbots let your users interact with your service in their
       own natural language. Use free and open source tools along 
@@ -33,7 +33,7 @@ Product.create!(title: 'Build Chatbot Interactions',
       implementation strategy to simplify bot development and testing.
       From novices to experts, chatbots are an area in which everyone 
       can participate. Exercise your creativity by creating chatbot 
-      skills for communicating, information, and fun.
+      skills for communicating, information, and fun.</p>
       },
   image_url: 'dpchat.jpg',
   price: 20.00)
@@ -56,7 +56,7 @@ Product.create!(title: 'Programming Crystal',
 
 
 
-Product.create!(title: 'Programming Crystal',
+Product.create!(title: 'Rails',
   description:
     %{Create High-Performance, Safe, Concurrent Apps.
       Crystal is for Ruby programmers who want more performance or for 
@@ -68,7 +68,7 @@ Product.create!(title: 'Programming Crystal',
       tooling. Now you can write beautiful code that runs faster, scales better, 
       and is a breeze to deploy.
       },
-  image_url: '',
-  price: 40.00)
+  image_url: 'rails.png',
+  price: 50.00)
 
   # image_url: 'waterfall.jpg',
