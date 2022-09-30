@@ -5,8 +5,6 @@ class OrdersController < ApplicationController
   before_action :set_cart , only: %i[new create]
   before_action :ensure_cart_isnot_empty, only: %i[new]
 
-
-
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -29,7 +27,6 @@ class OrdersController < ApplicationController
   def create
     @order = Order.new(order_params)
     @order.add_line_items_from_cart(@cart)
-
     respond_to do |format|
       if @order.save
         Cart.destroy(session[:cart_id])
@@ -59,7 +56,6 @@ class OrdersController < ApplicationController
   # DELETE /orders/1 or /orders/1.json
   def destroy
     @order.destroy
-
     respond_to do |format|
       format.html { redirect_to orders_url, notice: "Order was successfully destroyed." }
       format.json { head :no_content }

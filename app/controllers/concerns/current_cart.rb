@@ -1,5 +1,5 @@
 #---
-# Excerpted from "Agile Web Development with Rails 6",
+# Excerpted from "Agile Web Development with Rails 7",
 # published by The Pragmatic Bookshelf.
 # Copyrights apply to this code. It may not be used to create training material,
 # courses, books, articles, and the like. Contact us if you are in doubt.
@@ -9,7 +9,6 @@
 module CurrentCart
 
   private
-
     def set_cart 
       @cart = Cart.find(session[:cart_id])
     rescue ActiveRecord::RecordNotFound

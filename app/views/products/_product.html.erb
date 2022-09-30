@@ -1,10 +1,9 @@
-
-  <tbody>
-      <tr>
-        <td><%= product.title %></td>
-        <td><%= sanitize(product.description) %></td>
-        <td> <%= image_tag(product.image_url)%></td>
-        <td ><%=number_to_currency( product.price) %></td>
-        <td><%= link_to "Details", product, class:"btn btn-primary" %></td>
-      </tr>
-    </tbody>
+<tbody>
+  <tr>
+    <td><%= product.title %></td>
+    <td><%= sanitize(product.description) %></td>
+    <td> <%= image_tag(product.image_url)%></td>
+    <td ><%=number_to_currency( product.price) %></td>
+    <td><%= link_to "Details", product, class:"btn btn-primary" %></td>
+  </tr>
+</tbody>

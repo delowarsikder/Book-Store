@@ -1,9 +1,7 @@
 class CartsController < ApplicationController
 
   skip_before_action :authorize , only: %i[create update destroy]
-
   before_action :set_cart, only: %i[show edit update destroy]
-  
   rescue_from ActiveRecord::RecordNotFound, with: :invalid_cart
 
   # GET /carts
@@ -30,7 +28,6 @@ class CartsController < ApplicationController
   # POST /carts.json
   def create
     @cart = Cart.new(cart_params)
-
     respond_to do |format|
       if @cart.save
         format.html { redirect_to @cart, notice: 'Cart was successfully created.' }
@@ -85,4 +82,3 @@ class CartsController < ApplicationController
       redirect_to store_index_url, notice: 'Invalid cart'
     end
 end
-
