@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'support_requests/index'
   
   get 'admin' => 'admin#index'
   controller :sessions do
@@ -13,6 +14,8 @@ Rails.application.routes.draw do
   resources :users
   resources :products do get :who_bought, on: :member
   end
+
+  resources :support_requests, only:[:index, :update]
 
   scope '(:locale)' do
 
