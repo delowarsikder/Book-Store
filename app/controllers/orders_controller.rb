@@ -4,7 +4,7 @@ class OrdersController < ApplicationController
   before_action :set_order, only: %i[ show edit update destroy ]
   before_action :set_cart , only: %i[new create]
   before_action :ensure_cart_isnot_empty, only: %i[new]
-
+  before_action :order_params, only: %i[ create update]
   # GET /orders or /orders.json
   def index
     @orders = Order.all
@@ -31,7 +31,13 @@ class OrdersController < ApplicationController
       if @order.save
         Cart.destroy(session[:cart_id])
         session[:cart_id]=nil
-        ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
+        puts '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+
+        puts '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+        puts '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+        puts '%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%'
+        # ChargeOrderJob.perform_later(@order,pay_type_params.to_h)
+        OrderMailer.received(@order).deliver_later
         format.html { redirect_to store_index_url, notice: "Thank you for your order." }
         format.json { render :show, status: :created, location: @order }
       else
