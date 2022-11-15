@@ -1,9 +1,12 @@
-<h1>Editing product</h1>
-
-<%= render "form", product: @product %>
-
 <br>
+<div class="card">
+  <div class="card-header">
+    <h1>Editing Product</h1>
+  </div>
 
-<div>
-  <%= link_to "Products List", products_path %>
+  <div class="card-body">
+    <%= render "form", product: @product %>
+    <br>
+    <%= link_to "Products List", products_path,class:"btn btn-primary" %>
+  </div>
 </div>
