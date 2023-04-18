@@ -15,19 +15,25 @@
   </head>
 
   <body>
-    <br>
-    <div class=" d-flex flex-column min-vh-100">
-
-      <% render 'homes/header' %>
-      <div class="container">
-        <%if notice%>
-          <%=render 'layouts/alert' %>
+    <div class="position-relative d-flex flex-column min-vh-100">
+      <%=render 'home/header' %>
+      <div class="d-flex flex-row">
+     
+        <div class="p-2">
+          <%if @cart%>
+            <%=render @cart%>
           <%end%>
-        <br>
-        <%= yield %>
-
+        </div>
+        
+        <div class="container">
+          <%if notice%>
+            <%=render 'layouts/alert' %>
+          <%end%>
+          <%= yield %>
+        </div>
+      
       </div>
-      <%= render 'homes/footer' %>
+      <%= render 'home/footer' %>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

@@ -1,0 +1,51 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+
+    <div>
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="navbar-brand" href="/">
+            <%=image_tag('logo.svg')%>
+          </a>
+        </li>
+        <li class="nav-item">
+          <%= link_to "Depot" ,'/',class:'nav-link active'%>
+        </li>
+      </ul>
+    </div>
+
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%if session[:user_id]==nil%>
+            <%= link_to 'Your cart' ,new_order_path, class:"nav-link" %>
+          <%else%>
+            <%= link_to 'Orders List' ,orders_path, class:"nav-link" %>
+          <%end%>
+        </li>
+
+        <%if session[:user_id]!=nil%>
+          <li class="nav-item">
+            <%=link_to 'Products' ,products_path,class:"nav-link" %>
+          </li>
+        <%end%>
+
+        <li class="nav-item">
+          <%if session[:user_id]==nil%>
+            <%= link_to 'Admin' ,login_path, class:"nav-link" %>
+          <%else%>
+            <%= button_to 'Logout' , logout_path,method: :delete, class:"nav-link btn" %>
+          <%end%>
+        </li>
+
+      </ul>
+    </div>
+  </div>
+</nav>
+
